@@ -86,6 +86,9 @@ const NSUInteger kNumPrefetchedViews = 3;
 
     self.anchorContainerView.frame = CGRectMake(0, 0, 1, 1);
     self.containerView.frame = self.bounds;
+    for (UIView *subView in self.containerView.subviews) {
+        subView.frame = self.containerView.bounds;
+    }
     self.reuseCoverContainerView.frame = self.bounds;
     self.swipeableViewsCenterInitial = CGPointMake(
         self.bounds.size.width / 2 + self.swipeableViewsCenterInitial.x -
